@@ -8,6 +8,13 @@
   </head>
   <body>
     <header>
+      <div class="auth-controls">
+        <button id="user-menu-button" class="icon-button" type="button" aria-label="Teacher login">
+          <span aria-hidden="true">👤</span>
+          <span class="auth-label">Teacher Login</span>
+        </button>
+        <p id="auth-status" class="auth-status">Teacher login required for changes</p>
+      </div>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
     </header>
@@ -22,7 +29,10 @@
       </section>
 
       <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
+        <h3>Teacher Registration Tools</h3>
+        <p id="signup-help" class="info-message">
+          Students can view registrations, but only logged-in teachers can make changes.
+        </p>
         <form id="signup-form">
           <div class="form-group">
             <label for="email">Student Email:</label>
@@ -35,11 +45,30 @@
               <!-- Activity options will be loaded here -->
             </select>
           </div>
-          <button type="submit">Sign Up</button>
+          <button type="submit">Register Student</button>
         </form>
         <div id="message" class="hidden"></div>
       </section>
     </main>
+
+    <div id="auth-modal" class="modal hidden">
+      <div class="modal-content">
+        <button id="close-auth-modal" class="close-modal" type="button" aria-label="Close login dialog">×</button>
+        <h3>Teacher Login</h3>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required placeholder="coach.miller" />
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" required placeholder="Enter password" />
+          </div>
+          <button type="submit">Log In</button>
+        </form>
+        <button id="logout-button" class="secondary-button hidden" type="button">Log Out</button>
+      </div>
+    </div>
 
     <footer>
       <p>&copy; 2026 Mergington High School</p>
